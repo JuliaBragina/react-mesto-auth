@@ -49,7 +49,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser, onLoading}) {
           name="name"
           value={name || ""}
           onChange={handleChangeName}
-          className="popup-edit__item popup-item popup-edit__item_el_name"
+          className="popup-edit__item popup__item popup-edit__item_el_name"
           placeholder="Имя"
           minLength="2"
           maxLength="40"
@@ -64,7 +64,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser, onLoading}) {
           name="description"
           value={description  || ""}
           onChange={handleChangeDescription}
-          className="popup-edit__item popup-item popup-edit__item_el_description"
+          className="popup-edit__item popup__item popup-edit__item_el_description"
           placeholder="Краткое описание"
           minLength="2"
           maxLength="200"

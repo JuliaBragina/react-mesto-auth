@@ -41,7 +41,7 @@ function AddPlacePopup({isOpen, onClose, onAddCard, onLoading}) {
           name="name"
           value={name || ""}
           onChange={handleChangeName}
-          className="popup-add__item popup-item popup-add__item_el_name"
+          className="popup-add__item popup__item popup-add__item_el_name"
           placeholder="Название"
           minLength="2"
           maxLength="30"
@@ -55,7 +55,7 @@ function AddPlacePopup({isOpen, onClose, onAddCard, onLoading}) {
           name="link"
           value={description || ""}
           onChange={handleChangeDescription}
-          className="popup-add__item popup-item popup-add__item_el_description"
+          className="popup-add__item popup__item popup-add__item_el_description"
           placeholder="Ссылка на картинку"
           autoComplete="off"
           required />

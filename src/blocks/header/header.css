@@ -1,8 +1,9 @@
 .header{
-  padding-top: 45px;
+  padding-top: 18px;
   padding-bottom: 40px;
   max-width: 880px;
   margin: 0 auto;
+  transition: all .2s;
 }
 
 .header::after{

@@ -30,7 +30,7 @@ function EditAvatarPopup({isOpen, onClose, onUpdateAvatar, onLoading}) {
           type="url"
           name="link"
           ref={imageRef}
-          className="popup-update__item popup-item popup-update__item"
+          className="popup-update__item popup__item popup-update__item"
           placeholder="Ссылка на новый аватар"
           autoComplete="off"
           required />
