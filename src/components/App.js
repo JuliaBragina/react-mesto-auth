@@ -142,8 +142,6 @@ function App() {
   }
 
   function handleRegisterUser(data){
-    //email: 'julia@yandex.ru', password: '123456'
-    //email: 'julia10@yandex.ru', password: '1234567890'
     auth.register(data.email, data.password)
     .then((res) => {
       history.push('/sign-in');

@@ -7,4 +7,4 @@
 В данной работе использована методология БЭМ.
 
 GitHub Pages:
-https://juliabragina.github.io/mesto-react-auth/
+https://juliabragina.github.io/react-mesto-auth/
