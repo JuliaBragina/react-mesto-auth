@@ -1,5 +1,12 @@
 export const BASE_URL = 'https://auth.nomoreparties.co';
 
+const checkResponse = (res) => {
+  if(res.ok){
+    return res.json();
+  }
+  return Promise.reject('Произошла ошибка');
+};
+
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
@@ -7,13 +14,7 @@ export function register(email, password) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({email, password})
-  }).then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject('Произошла ошибка');
-    }
-  );
+  }).then((res) => checkResponse(res));
 };
 
 export function checkJTW(jwt) {
@@ -23,13 +24,7 @@ export function checkJTW(jwt) {
       'Content-Type': 'application/json',
       "Authorization" : `Bearer ${jwt}`
     }
-  }).then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject('Произошла ошибка');
-    }
-  );
+  }).then((res) => checkResponse(res));
 };
 
 export function login(email, password) {
@@ -39,13 +34,7 @@ export function login(email, password) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({email, password})
-  }).then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject('Произошла ошибка');
-    }
-  );
+  }).then((res) => checkResponse(res));
 };
 
 

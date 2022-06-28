@@ -23,7 +23,6 @@ const Login = ({onLoggedUser}) => {
     });
   }
 
-
   return(
     <>
       <PopupAuth

@@ -34,14 +34,17 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    api.getAllCards()
-    .then(res => setCards(res))
-    .catch(err => alert(err));
+    if(loggedIn){
+      console.log(loggedIn);
+      api.getAllCards()
+      .then(res => setCards(res))
+      .catch(err => alert(err));
 
-    api.getUser()
-    .then(res => setCurrentUser(res))
-    .catch(err => alert(err));
-  }, []);
+      api.getUser()
+      .then(res => setCurrentUser(res))
+      .catch(err => alert(err));
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
     tokenCheck();
@@ -149,7 +152,7 @@ function App() {
       setIsRegister(true);
     })
     .catch(() => {
-      setIsRegister(false)
+      setIsRegister(false);
       setIsRegPopupOpen(true);
     });
   }
@@ -158,16 +161,16 @@ function App() {
     setUserEmail(data.email);
     auth.login(data.email, data.password)
     .then((res) => {
-      if(!res){
-        alert('Такого пльзоваетеляне существует!');
-      }
       if(res.token){
         localStorage.setItem('token', res.token);
         history.push("/mesto-react-auth");
         setLoggedIn(true);
       }
     })
-    .catch(err => alert(err));
+    .catch(() => {
+      setIsRegister(false);
+      setIsRegPopupOpen(true);
+    });
   }
 
   function tokenCheck() {
@@ -180,7 +183,10 @@ function App() {
         history.push('/mesto-react-auth');
         setLoggedIn(true);
     })
-      .catch(err => alert(err));
+      .catch(() => {
+        setIsRegister(false);
+        setIsRegPopupOpen(true);
+      });
   };}
 
   return (
@@ -196,7 +202,7 @@ function App() {
               <Header pathNav={"/sign-in"} emailText={false} buttonTitle={"Войти"} />
               <Register onRegisterUser={handleRegisterUser} />
             </Route>
-            <ProtectedRoute 
+            <ProtectedRoute exact
               loggedIn={loggedIn}
               path="/mesto-react-auth"
               onLoggedout={onLoggedIn}
