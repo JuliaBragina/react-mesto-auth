@@ -35,7 +35,6 @@ function App() {
 
   useEffect(() => {
     if(loggedIn){
-      console.log(loggedIn);
       api.getAllCards()
       .then(res => setCards(res))
       .catch(err => alert(err));
