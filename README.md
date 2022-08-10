@@ -17,5 +17,9 @@
 
 - React.js
 
+## Запуск проекта:
+
+`npm run start`- для запуска проекта
+
 ## GitHub Pages:
 https://juliabragina.github.io/react-mesto-auth/
