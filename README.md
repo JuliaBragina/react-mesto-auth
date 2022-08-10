@@ -13,5 +13,9 @@
 Были испольщованы хуки useState и useEffect, useHistory.
 Также основная функцинальность подключена к готову бэкенду.
 
-GitHub Pages:
+## Стек:
+
+- React.js
+
+## GitHub Pages:
 https://juliabragina.github.io/react-mesto-auth/
